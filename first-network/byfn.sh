@@ -85,7 +85,6 @@ function askProceed () {
 }
 
 # Obtain CONTAINER_IDS and remove them
-# TODO Might want to make this optional - could clear other containers
 function clearContainers () {
   CONTAINER_IDS=$(docker ps --filter "name=^/dev-peer|^/peer|^/orderer|cli" -aq)
   if [ -z "$CONTAINER_IDS" -o "$CONTAINER_IDS" == " " ]; then
